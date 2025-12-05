@@ -1,0 +1,32 @@
+! Combustivel_A - Problema de c de Capacidades
+! Texas Petro S/A
+
+MIN
+0 Y1 + 500000 Y2 + 450000 Y3 
++ 60 X11 + 65 X12 + 78 X13 + 67 X14 + 84 X15 
++ 45 X21 + 54 X22 + 76 X23 + 53 X24 + 32 X25
++ 31 X31 + 43 X32 + 54 X33 + 65 X34 + 72 X35
+
+SUBJECT TO
+
+! Restrições de Capacidade
+X11 + X12 + X13 + X14 + X15 - 50 Y1 <= 0
+X21 + X22 + X23 + X24 + X25 - 75 Y2 <= 0
+X31 + X32 + X33 + X34 + X35 - 85 Y3 <= 0
+
+! Restrições de Demanda
+X11 + X21 + X31 = 16
+X12 + X22 + X32 = 20
+X13 + X23 + X33 = 12
+X14 + X24 + X34 = 18
+X15 + X25 + X35 = 14
+
+! CDs já instalados
+Y1 = 1
+
+END
+
+INT
+Y1
+Y2
+Y3

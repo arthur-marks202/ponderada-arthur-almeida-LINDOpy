@@ -1,0 +1,32 @@
+! Combustivel_B - Problema de Localização de Capacidades
+! Texas Petro S/A
+
+MIN
+0 Y1 + 500000 Y2 + 450000 Y3 
++ 37 X11 + 39 X12 + 54 X13 + 45 X14 + 25 X15 
++ 23 X21 + 34 X22 + 21 X23 + 34 X24 + 70 X25
++ 21 X31 + 38 X32 + 45 X33 + 38 X34 + 68 X35
+
+SUBJECT TO
+
+! Restrições de Capacidade
+X11 + X12 + X13 + X14 + X15 - 30 Y1 <= 0
+X21 + X22 + X23 + X24 + X25 - 60 Y2 <= 0
+X31 + X32 + X33 + X34 + X35 - 50 Y3 <= 0
+
+! Restrições de Demanda
+X11 + X21 + X31 = 10
+X12 + X22 + X32 = 14
+X13 + X23 + X33 = 12
+X14 + X24 + X34 = 16
+X15 + X25 + X35 = 8
+
+! CDs já instalados
+Y1 = 1
+
+END
+
+INT
+Y1
+Y2
+Y3
